@@ -216,7 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             square.classList.add('missed')
         }
-        currentPlayerv = 'computer'
+        checkForWins()
+        currentPlayer = 'computer'
         playGame()
     }
 
@@ -239,4 +240,63 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPlayer = 'user'
         turnDisplay.innerHTML = 'Your Go'
     } 
+
+    function checkForWins() {
+        //User
+        if(destroyerCount === 2) {
+            infoDisplay.innerHTML = 'You sunk the computers destroyer!'
+            destroyerCount = 10
+        }
+        if(submarineCount === 3) {
+            infoDisplay.innerHTML = 'You sunk the computers submarine!'
+            submarineCount = 10
+        }
+        if(cruiserCount === 3) {
+            infoDisplay.innerHTML = 'You sunk the computers cruiser!'
+            cruiserCount = 10
+        }
+        if(battleshipCount === 4) {
+            infoDisplay.innerHTML = 'You sunk the computers battleship!'
+            battleshipCount = 10
+        }
+        if(carrierCount === 5) {
+            infoDisplay.innerHTML = 'You sunk the computers carrier!'
+            carrierCount = 10
+        }
+
+        //Computer
+        if(computerDestroyerCount === 2) {
+            infoDisplay.innerHTML = 'Computer sunk your destroyer!'
+            computerDestroyerCount = 10
+        }
+        if(computerSubmarineCount === 3) {
+            infoDisplay.innerHTML = 'Computer sunk your submarine!'
+            computerSubmarineCount = 10
+        }
+        if(computerCruiserCount === 3) {
+            infoDisplay.innerHTML = 'Computer sunk your cruiser!'
+            computerCruiserCount = 10
+        }
+        if(computerBattleshipCount === 4) {
+            infoDisplay.innerHTML = 'Computer sunk your battleship!'
+            computerBattleshipCount = 10
+        }
+        if(computerCarrierCount === 5) {
+            infoDisplay.innerHTML = 'Computer sunk your carrier!'
+            computerCarrierCount = 10
+        }
+        if((destroyerCount + submarineCount + cruiserCount + battleshipCount + carrierCount) === 50) {
+            infoDisplay.innerHTML = "You Win!"
+            isGameOver()
+        }
+        if((computerDestroyerCount + computerSubmarineCount + computerCruiserCount + computerBattleshipCount + computerCarrierCount) === 50) {
+            infoDisplay.innerHTML = "Computer Win!"
+            isGameOver()
+        }
+    }
+
+    function Games() {
+        isGameOver = true
+        startButton.removeEventListener('click', playGame)
+    }
 })
