@@ -1,0 +1,28 @@
+{
+  "name": "battleships",
+  "version": "1.0.0",
+  "description": "Multi Player Batteship Game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacquesJEngelbrecht/javascript-battleships.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacquesJEngelbrecht/javascript-battleships/issues"
+  },
+  "homepage": "https://github.com/JacquesJEngelbrecht/javascript-battleships#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
