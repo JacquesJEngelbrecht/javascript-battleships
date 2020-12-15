@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
     <script src="script.js" defer></script>
     <title>Battleships</title>
 </head>
 <body>
+    <button id="singlePlayerButton">Single Player</button>
+    <button id="multiPlayerButton">MultiPlayer</button>
+    
+    <div class="player p1">
+        Player 1
+        <div class="connected">Connected <span></span></div>
+        <div class="ready">Ready <span></span></div>
+    </div>
+    <div class="player p2">
+        Player 2
+        <div class="connected">Connected <span></span></div>
+        <div class="ready">Ready <span></span></div>
+    </div>
+
     <div class="container">
         <div class="grid grid-user"></div>
         <div class="grid grid-computer"></div>
